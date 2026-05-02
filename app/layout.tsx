@@ -6,7 +6,7 @@ import Footer from '@/components/Footer/Footer';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
 
 const robotoSans = Roboto({
-  variable: '--font-roboto ',
+  variable: '--font-roboto',
   subsets: ['latin'],
   weight: ['400', '700'],
   display: 'swap',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'NoteHub',
     description: 'A simple app to create, manage and organize your notes efficiently.',
-    url: 'https://notehub.com/notes',
+    url: 'https://notehub.com/',
     siteName: 'NoteHub',
     images: [
       {
