@@ -1,7 +1,7 @@
 import axios from "axios";
 import type { Note, NoteFormValues } from "@/types/note";
 
-axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
+// axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_URL;
 axios.defaults.headers.common["Authorization"] =
    `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`;
 
@@ -15,14 +15,17 @@ export const getNotes = async (
    search: string,
    tag: string,
 ): Promise<ApiResponse> => {
-   const response = await axios.get<ApiResponse>(`/notes`, {
-      params: {
-         page,
-         perPage: 12,
-         search,
-         tag: tag === "all" ? undefined : tag,
+   const response = await axios.get<ApiResponse>(
+      `https://notehub-public.goit.study/api/notes`,
+      {
+         params: {
+            page,
+            perPage: 12,
+            search,
+            tag: tag === "all" ? undefined : tag,
+         },
       },
-   });
+   );
    return response.data;
 };
 
