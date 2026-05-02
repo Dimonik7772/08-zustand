@@ -14,7 +14,7 @@ export function NoteList({ notes }: NoteListProps) {
    const mutation = useMutation({
       mutationFn: deleteNote,
       onSuccess() {
-         queryClient.invalidateQueries({ queryKey: ["NotesByCategories"] });
+         queryClient.invalidateQueries({ queryKey: ["notes"] });
       },
    });
    return (
