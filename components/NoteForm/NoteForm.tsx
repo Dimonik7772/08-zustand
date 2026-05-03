@@ -72,7 +72,7 @@ export default function NoteForm() {
          if (err instanceof Yup.ValidationError) {
             const formattedErrors: Record<string, string> = {};
 
-            err.inner.forEach((e) => {
+            err.inner.map((e) => {
                if (e.path) {
                   formattedErrors[e.path] = e.message;
                }
@@ -95,7 +95,8 @@ export default function NoteForm() {
                defaultValue={draft?.title}
                onChange={handleChange}
             />
-            {errors.title && <span className={css.error}>{errors.title}</span>}
+
+            <span className={css.error}>{errors.title}</span>
          </div>
          <div className={css.formGroup}>
             <label htmlFor="content">Content</label>
@@ -107,9 +108,8 @@ export default function NoteForm() {
                onChange={handleChange}
                defaultValue={draft?.content}
             />
-            {errors.content && (
-               <span className={css.error}>{errors.content}</span>
-            )}
+
+            <span className={css.error}>{errors.content}</span>
          </div>
          <div className={css.formGroup}>
             <label htmlFor="tag">tag</label>
@@ -126,7 +126,7 @@ export default function NoteForm() {
                <option value="Meeting">Meeting</option>
                <option value="Shopping">Shopping</option>
             </select>
-            {errors.tag && <span className={css.error}>{errors.tag}</span>}
+            <span className={css.error}>{errors.tag}</span>
          </div>
          <div className={css.formGroup}>
             <button

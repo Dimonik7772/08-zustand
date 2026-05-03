@@ -2,6 +2,8 @@
    display: flex;
    flex-direction: column;
    gap: 16px;
+   width: 600px;
+   margin: 0 auto;
 }
 
 .formGroup {
@@ -68,4 +70,6 @@
    color: #dc3545;
    font-size: 12px;
    margin-top: 4px;
+   display: block;
+   min-height: 15px;
 }
